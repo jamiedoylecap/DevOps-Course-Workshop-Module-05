@@ -1,0 +1,21 @@
+# Copy this into a file called `docker-compose.yml`
+version: "3"
+
+services:
+  cliapp:
+    build:
+      context: .
+      dockerfile: Dockerfile.cliapp
+    image: jamiedoyle74cap/cliapp:3.0
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile.webapp
+    image: jamiedoyle74cap/webapp:3.0
+    ports:
+    - target: 80
+      published: 8080
+      protocol: tcp
+      mode: host
+  redis:
+    image: redis
