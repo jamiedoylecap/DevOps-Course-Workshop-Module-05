@@ -6,12 +6,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.cliapp
-    image: jamiedoyle74cap/cliapp:3.0
+    image: jamiedoyle74cap/cliapp:2.3
   webapp:
     build:
       context: .
       dockerfile: Dockerfile.webapp
-    image: jamiedoyle74cap/webapp:3.0
+    image: jamiedoyle74cap/webapp:2.3
     ports:
     - target: 80
       published: 8080
@@ -19,3 +19,5 @@ services:
       mode: host
   redis:
     image: redis
+
+
